@@ -341,7 +341,7 @@ export interface Body_1 {
 }
 
 export interface Body_1RichText {
-    blocks: UnionCodeSnippetComponentFaqItemComponentRichTextCalloutComponent[]
+    blocks: UnionRichTextCalloutComponentCodeSnippetComponentFaqItemComponent[]
     content: Scalars['BSHBRichTextContentSchema']
     toc: Scalars['BSHBRichTextTOCSchema']
     __typename: 'Body_1RichText'
@@ -616,11 +616,11 @@ export interface CompanyComponent {
     _sys: BlockDocumentSys
     _title: Scalars['String']
     image: (BlockImage | null)
-    url: (Scalars['String'] | null)
+    suprbuild: (Scalars['String'] | null)
     __typename: 'CompanyComponent'
 }
 
-export type CompanyComponentOrderByEnum = '_sys_createdAt__ASC' | '_sys_createdAt__DESC' | '_sys_hash__ASC' | '_sys_hash__DESC' | '_sys_id__ASC' | '_sys_id__DESC' | '_sys_lastModifiedAt__ASC' | '_sys_lastModifiedAt__DESC' | '_sys_slug__ASC' | '_sys_slug__DESC' | '_sys_title__ASC' | '_sys_title__DESC' | 'image__ASC' | 'image__DESC' | 'url__ASC' | 'url__DESC'
+export type CompanyComponentOrderByEnum = '_sys_createdAt__ASC' | '_sys_createdAt__DESC' | '_sys_hash__ASC' | '_sys_hash__DESC' | '_sys_id__ASC' | '_sys_id__DESC' | '_sys_lastModifiedAt__ASC' | '_sys_lastModifiedAt__DESC' | '_sys_slug__ASC' | '_sys_slug__DESC' | '_sys_title__ASC' | '_sys_title__DESC' | 'image__ASC' | 'image__DESC' | 'suprbuild__ASC' | 'suprbuild__DESC'
 
 export interface ComparisonOptions {
     _analyticsKey: Scalars['String']
@@ -631,6 +631,8 @@ export interface ComparisonOptions {
     _slugPath: Scalars['String']
     _sys: BlockDocumentSys
     _title: Scalars['String']
+    boolean: BooleanComponent
+    comparativeText: CustomTextComponent
     __typename: 'ComparisonOptions'
 }
 
@@ -643,6 +645,18 @@ export interface Components {
     _slugPath: Scalars['String']
     _sys: BlockDocumentSys
     _title: Scalars['String']
+    button: ButtonComponent
+    codeSnippet: CodeSnippetComponent
+    company: CompanyComponent
+    comparisonOptions: ComparisonOptions
+    darkLightImage: DarkLightImageComponent
+    faqItem: FaqItemComponent
+    featureWithIcon: FeatureWithIconComponent
+    formWrapper: FormWrapperComponent
+    heading: HeadingComponent
+    metadataOverrides: MetadataOverridesComponent
+    quote: QuoteComponent
+    richTextCallout: RichTextCalloutComponent
     __typename: 'Components'
 }
 
@@ -1950,15 +1964,15 @@ export interface TransactionStatus {
 
 export type TransactionStatusEnum = 'Cancelled' | 'Completed' | 'Failed' | 'Running' | 'Scheduled'
 
+export type UnionBooleanComponentCustomTextComponent = (BooleanComponent | CustomTextComponent) & { __isUnion?: true }
+
 export type UnionCodeSnippetComponent = (CodeSnippetComponent) & { __isUnion?: true }
-
-export type UnionCodeSnippetComponentFaqItemComponentRichTextCalloutComponent = (CodeSnippetComponent | FaqItemComponent | RichTextCalloutComponent) & { __isUnion?: true }
-
-export type UnionCustomTextComponentBooleanComponent = (BooleanComponent | CustomTextComponent) & { __isUnion?: true }
 
 export type UnionCustomTextComponentPageReferenceComponent = (CustomTextComponent | PageReferenceComponent) & { __isUnion?: true }
 
 export type UnionPricingComponentFormComponentHeroComponentCalloutComponentCalloutV2ComponentCompaniesComponentTestimonialSliderComponentFeaturesCardsComponentPricingTableComponentFeaturesBigImageComponentTestimonialsGridComponentFeatureHeroComponentFeaturesSideBySideComponentFreeformTextComponentFeaturesGridComponentFaqComponent = (CalloutComponent | CalloutV2Component | CompaniesComponent | FaqComponent | FeatureHeroComponent | FeaturesBigImageComponent | FeaturesCardsComponent | FeaturesGridComponent | FeaturesSideBySideComponent | FormComponent | FreeformTextComponent | HeroComponent | PricingComponent | PricingTableComponent | TestimonialSliderComponent | TestimonialsGridComponent) & { __isUnion?: true }
+
+export type UnionRichTextCalloutComponentCodeSnippetComponentFaqItemComponent = (CodeSnippetComponent | FaqItemComponent | RichTextCalloutComponent) & { __isUnion?: true }
 
 export interface ValueComponent {
     _analyticsKey: Scalars['String']
@@ -1972,7 +1986,7 @@ export interface ValueComponent {
     _sys: BlockDocumentSys
     _title: Scalars['String']
     plan: PricingPlanComponent
-    value: (UnionCustomTextComponentBooleanComponent | null)
+    value: (UnionBooleanComponentCustomTextComponent | null)
     __typename: 'ValueComponent'
 }
 
@@ -3146,7 +3160,7 @@ export interface AuthorComponentGenqlSelection{
 
 export interface AuthorComponentFilterInput {AND?: (AuthorComponentFilterInput | null),OR?: (AuthorComponentFilterInput | null),_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),company?: (AuthorComponentFilterInput__company_0___company | null),role?: (StringFilter | null),x?: (StringFilter | null)}
 
-export interface AuthorComponentFilterInput__company_0___company {_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),url?: (StringFilter | null)}
+export interface AuthorComponentFilterInput__company_0___company {_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),suprbuild?: (StringFilter | null)}
 
 export interface AuthorComponentSearchInput {
 /** Searchable fields for query */
@@ -3752,7 +3766,7 @@ export interface Body_1GenqlSelection{
 }
 
 export interface Body_1RichTextGenqlSelection{
-    blocks?: UnionCodeSnippetComponentFaqItemComponentRichTextCalloutComponentGenqlSelection
+    blocks?: UnionRichTextCalloutComponentCodeSnippetComponentFaqItemComponentGenqlSelection
     content?: boolean | number
     toc?: boolean | number
     __typename?: boolean | number
@@ -4239,7 +4253,7 @@ export interface CompaniesComponentGenqlSelection{
 
 export interface CompaniesComponentFilterInput {AND?: (CompaniesComponentFilterInput | null),OR?: (CompaniesComponentFilterInput | null),_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),companies?: (CompaniesComponentFilterInput__companies_0___company | null),subtitle?: (StringFilter | null)}
 
-export interface CompaniesComponentFilterInput__companies_0___company {_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),url?: (StringFilter | null)}
+export interface CompaniesComponentFilterInput__companies_0___company {_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),suprbuild?: (StringFilter | null)}
 
 export interface CompaniesComponentSearchInput {
 /** Searchable fields for query */
@@ -4265,12 +4279,12 @@ export interface CompanyComponentGenqlSelection{
     _sys?: BlockDocumentSysGenqlSelection
     _title?: boolean | number
     image?: BlockImageGenqlSelection
-    url?: boolean | number
+    suprbuild?: boolean | number
     __typename?: boolean | number
     __fragmentOn?: "CompanyComponent"
 }
 
-export interface CompanyComponentFilterInput {AND?: (CompanyComponentFilterInput | null),OR?: (CompanyComponentFilterInput | null),_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),url?: (StringFilter | null)}
+export interface CompanyComponentFilterInput {AND?: (CompanyComponentFilterInput | null),OR?: (CompanyComponentFilterInput | null),_id?: (StringFilter | null),_slug?: (StringFilter | null),_sys_apiNamePath?: (StringFilter | null),_sys_createdAt?: (DateFilter | null),_sys_hash?: (StringFilter | null),_sys_id?: (StringFilter | null),_sys_idPath?: (StringFilter | null),_sys_lastModifiedAt?: (DateFilter | null),_sys_slug?: (StringFilter | null),_sys_slugPath?: (StringFilter | null),_sys_title?: (StringFilter | null),_title?: (StringFilter | null),suprbuild?: (StringFilter | null)}
 
 export interface CompanyComponentSearchInput {
 /** Searchable fields for query */
@@ -4293,6 +4307,8 @@ export interface ComparisonOptionsGenqlSelection{
     _slugPath?: boolean | number
     _sys?: BlockDocumentSysGenqlSelection
     _title?: boolean | number
+    boolean?: BooleanComponentGenqlSelection
+    comparativeText?: CustomTextComponentGenqlSelection
     __typename?: boolean | number
     __fragmentOn?: "ComparisonOptions"
 }
@@ -4312,6 +4328,18 @@ export interface ComponentsGenqlSelection{
     _slugPath?: boolean | number
     _sys?: BlockDocumentSysGenqlSelection
     _title?: boolean | number
+    button?: ButtonComponentGenqlSelection
+    codeSnippet?: CodeSnippetComponentGenqlSelection
+    company?: CompanyComponentGenqlSelection
+    comparisonOptions?: ComparisonOptionsGenqlSelection
+    darkLightImage?: DarkLightImageComponentGenqlSelection
+    faqItem?: FaqItemComponentGenqlSelection
+    featureWithIcon?: FeatureWithIconComponentGenqlSelection
+    formWrapper?: FormWrapperComponentGenqlSelection
+    heading?: HeadingComponentGenqlSelection
+    metadataOverrides?: MetadataOverridesComponentGenqlSelection
+    quote?: QuoteComponentGenqlSelection
+    richTextCallout?: RichTextCalloutComponentGenqlSelection
     __typename?: boolean | number
     __fragmentOn?: "Components"
 }
@@ -6664,28 +6692,19 @@ export interface TransactionStatusGenqlSelection{
     __fragmentOn?: "TransactionStatus"
 }
 
+export interface UnionBooleanComponentCustomTextComponentGenqlSelection{
+    on_BooleanComponent?:BooleanComponentGenqlSelection,
+    on_CustomTextComponent?:CustomTextComponentGenqlSelection,
+    on_BlockDocument?: BlockDocumentGenqlSelection,
+    __typename?: boolean | number,
+    __fragmentOn?: "UnionBooleanComponentCustomTextComponent"
+}
+
 export interface UnionCodeSnippetComponentGenqlSelection{
     on_CodeSnippetComponent?:CodeSnippetComponentGenqlSelection,
     on_BlockDocument?: BlockDocumentGenqlSelection,
     __typename?: boolean | number,
     __fragmentOn?: "UnionCodeSnippetComponent"
-}
-
-export interface UnionCodeSnippetComponentFaqItemComponentRichTextCalloutComponentGenqlSelection{
-    on_CodeSnippetComponent?:CodeSnippetComponentGenqlSelection,
-    on_FaqItemComponent?:FaqItemComponentGenqlSelection,
-    on_RichTextCalloutComponent?:RichTextCalloutComponentGenqlSelection,
-    on_BlockDocument?: BlockDocumentGenqlSelection,
-    __typename?: boolean | number,
-    __fragmentOn?: "UnionCodeSnippetComponentFaqItemComponentRichTextCalloutComponent"
-}
-
-export interface UnionCustomTextComponentBooleanComponentGenqlSelection{
-    on_BooleanComponent?:BooleanComponentGenqlSelection,
-    on_CustomTextComponent?:CustomTextComponentGenqlSelection,
-    on_BlockDocument?: BlockDocumentGenqlSelection,
-    __typename?: boolean | number,
-    __fragmentOn?: "UnionCustomTextComponentBooleanComponent"
 }
 
 export interface UnionCustomTextComponentPageReferenceComponentGenqlSelection{
@@ -6718,6 +6737,15 @@ export interface UnionPricingComponentFormComponentHeroComponentCalloutComponent
     __fragmentOn?: "UnionPricingComponentFormComponentHeroComponentCalloutComponentCalloutV2ComponentCompaniesComponentTestimonialSliderComponentFeaturesCardsComponentPricingTableComponentFeaturesBigImageComponentTestimonialsGridComponentFeatureHeroComponentFeaturesSideBySideComponentFreeformTextComponentFeaturesGridComponentFaqComponent"
 }
 
+export interface UnionRichTextCalloutComponentCodeSnippetComponentFaqItemComponentGenqlSelection{
+    on_CodeSnippetComponent?:CodeSnippetComponentGenqlSelection,
+    on_FaqItemComponent?:FaqItemComponentGenqlSelection,
+    on_RichTextCalloutComponent?:RichTextCalloutComponentGenqlSelection,
+    on_BlockDocument?: BlockDocumentGenqlSelection,
+    __typename?: boolean | number,
+    __fragmentOn?: "UnionRichTextCalloutComponentCodeSnippetComponentFaqItemComponent"
+}
+
 export interface ValueComponentGenqlSelection{
     _analyticsKey?: { __args: {
     /**
@@ -6736,7 +6764,7 @@ export interface ValueComponentGenqlSelection{
     _sys?: BlockDocumentSysGenqlSelection
     _title?: boolean | number
     plan?: PricingPlanComponentGenqlSelection
-    value?: UnionCustomTextComponentBooleanComponentGenqlSelection
+    value?: UnionBooleanComponentCustomTextComponentGenqlSelection
     __typename?: boolean | number
     __fragmentOn?: "ValueComponent"
 }
